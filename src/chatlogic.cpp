@@ -5,6 +5,7 @@
 #include <sstream>
 #include <tuple>
 #include <vector>
+#include <memory>
 
 #include "chatbot.h"
 #include "chatlogic.h"
@@ -134,7 +135,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename) {
                   });
 
               // create new edge
-              std::unique_ptr edge = std::make_unique<GraphEdge>(id);
+              std::unique_ptr<GraphEdge> edge = std::make_unique<GraphEdge>(id);
               edge->SetChildNode((*childNode).get());
               edge->SetParentNode((*parentNode).get());
               _edges.push_back(edge.get());
