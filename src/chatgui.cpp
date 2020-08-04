@@ -5,6 +5,7 @@
 #include <wx/colour.h>
 #include <wx/filename.h>
 #include <wx/image.h>
+#include <memory>
 
 // size of chatbot window
 const int width = 414;
